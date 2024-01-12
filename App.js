@@ -1,8 +1,19 @@
-const heading = React.createElement("div", {id : "heading"} , 
-    React.createElement("div" , {id : "heading 2"},
-    [React.createElement("h1" , {id : "head"} , "I am h1") , React.createElement("h2" , {} , "I am h2")]
-  )
-);
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-root.render(heading);
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+const Title = () => (
+  <div>
+    <h1>This is my first React interview !!!</h1>
+  </div>
+);
+
+const Home = () => (
+  <div>
+    <Title />
+    <p>Hi I am Harshit Bhainsora From Almora</p>
+  </div>
+);
+
+root.render(<Home />);
