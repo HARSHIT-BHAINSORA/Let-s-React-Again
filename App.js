@@ -1,19 +1,19 @@
-import React from "react";
+import React, { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
+import Header from "./src/components/Header";
+import Body from "./src/components/Body";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-const Title = () => (
+const App = () => (
   <div>
-    <h1>This is my first React interview !!!</h1>
+    <Header />
+    <Body />
   </div>
 );
 
-const Home = () => (
-  <div>
-    <Title />
-    <p>Hi I am Harshit Bhainsora From Almora</p>
-  </div>
+root.render(
+  <StrictMode>
+    <App />
+  </StrictMode>
 );
-
-root.render(<Home />);

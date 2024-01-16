@@ -1,0 +1,17 @@
+.body-component {
+  margin-top: 50px;
+}
+
+.search-bar {
+  margin: auto;
+  display: block;
+  width: 500px;
+  height: 30px;
+  border: 1px solid gray;
+}
+
+.card-component {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+}
