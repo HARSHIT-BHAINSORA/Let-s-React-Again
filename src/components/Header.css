@@ -24,3 +24,13 @@
 .logo-component {
   margin-left: 60px;
 }
+
+.auth-btn {
+  border-radius: 10%;
+  height: 30px;
+  text-align: center;
+  padding: 5px;
+  width: 100px;
+  background-color: lightgray;
+  cursor: pointer;
+}

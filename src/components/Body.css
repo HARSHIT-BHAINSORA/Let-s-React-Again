@@ -3,8 +3,6 @@
 }
 
 .search-bar {
-  margin: auto;
-  display: block;
   width: 500px;
   height: 30px;
   border: 1px solid gray;
@@ -14,4 +12,29 @@
   display: flex;
   flex-wrap: wrap;
   margin: 20px;
+}
+
+.btn-component {
+  display: flex;
+  margin-left: 400px;
+}
+
+.search-component {
+  margin: 0px 20px;
+}
+
+.search-btn {
+  height: 35px;
+  background-color: lightgray;
+  cursor: pointer;
+}
+
+.filter-btn {
+  height: 35px;
+  background-color: lightgray;
+  cursor: pointer;
+}
+
+.filter-btn-component {
+  margin-left: 80px;
 }
