@@ -34,3 +34,7 @@
   background-color: lightgray;
   cursor: pointer;
 }
+
+.links-router {
+  text-decoration: none;
+}

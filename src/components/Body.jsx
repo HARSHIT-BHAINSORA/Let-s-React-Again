@@ -4,29 +4,32 @@ import Card from "./Card.jsx";
 import "./Body.css";
 import { DATA_URL } from "../utils/constant.js";
 import Shimmer from "./Shimmer.js";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   const [List, setList] = useState([]);
   const [filterList, setFilterList] = useState([]);
   const [searchText, setSearchText] = useState("");
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   const fetchData = async () => {
     const response = await axios.get(DATA_URL);
     console.log(response);
-    // console.log(
-    //   response.data.data.cards[3].card.card.gridElements.infoWithStyle
-    //     .restaurants
-    // );
-    setList(
-      response?.data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+    console.log(
+      response.data.data.cards[1].card.card.gridElements.infoWithStyle
         .restaurants
     );
-    setFilterList(List);
+    setList(
+      response?.data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+        .restaurants
+    );
+    setFilterList(
+      response?.data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+        .restaurants
+    );
   };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
 
   const buttonHandler = () => {
     const filteredList = List.filter((res) => {
@@ -34,6 +37,7 @@ const Body = () => {
     });
     setFilterList(filteredList);
   };
+  console.log(filterList.length);
 
   return List?.length === 0 ? (
     <Shimmer />
@@ -77,7 +81,13 @@ const Body = () => {
 
       <div className="card-component">
         {filterList?.map((it) => (
-          <Card key={it.info.id} {...it.info} />
+          <Link
+            className="Card-link"
+            key={it.info.id}
+            to={`/restaurants/${it.info.id}`}
+          >
+            <Card {...it.info} />
+          </Link>
         ))}
       </div>
     </div>
